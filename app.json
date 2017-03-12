@@ -1,0 +1,6 @@
+{
+  "name": "HeartAttack Scheduler",
+  "description": "A basic setup to build React apps",
+  "repository": "https://github.com/mcwright/heartattack_scheduler",
+  "keywords": ["node", "express", "react", "flux"]
+}
