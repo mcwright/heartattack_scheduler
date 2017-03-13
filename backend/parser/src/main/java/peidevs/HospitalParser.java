@@ -10,7 +10,7 @@ import peidevs.services.Service;
 
 import java.util.List;
 
-public class NotMain {
+public class HospitalParser {
     private final Logger logger = LogManager.getLogger(NotMain.class);
     private final Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm").create();
 
