@@ -29,7 +29,7 @@ public class Launcher {
 
 
             while( true ){
-                new NotMain().runOnce(parser, mongoDAO);
+                new HospitalParser().runOnce(parser, mongoDAO);
                 Thread.sleep( 5 * 1000 * 60 );
             }
         }catch( Exception e){
