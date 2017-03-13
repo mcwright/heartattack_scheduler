@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="ERROR">
+    <Properties>
+        <Property name="logFormat">%d{YYYY-MM-dd HH:mm:ss} [%-5p] %c - %m%n</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="toConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="${logFormat}" />
+        </Console>
+
+        <File name="toFile" fileName="logs/app.log">
+            <PatternLayout pattern="${logFormat}"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="TRACE">
+            <AppenderRef ref="toConsole"/>
+        </Root>
+    </Loggers>
+</Configuration>

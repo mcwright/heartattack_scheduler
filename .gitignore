@@ -31,8 +31,14 @@ bower_components
 
 # Project
 .idea
+.gradle
+.settings
 *.iml
+*.ipr
+*.iws
 .DS_Store
+.project
+.classpath
 
 # Compiled files
 public/css/*
@@ -40,3 +46,7 @@ public/js/*
 
 # Uploads
 public/uploads/*
+
+#java, gradle output
+out/
+build/
