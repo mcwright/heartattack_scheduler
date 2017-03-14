@@ -27,8 +27,13 @@ app.get('/historical', function (req, res) {
     var result = dbCtx.aggregate([{
         $group: {
             _id: { hospital: "$hospital", hourOfDay: { $substr:[ "$date", 11, 2] }},
-            avgMinutes: { $avg: "$mostUrgentMinutes" },
-            avgNumber: { $avg: "$mostUrgentNumber" }
+            mostUrgentAvgMinutes: { $avg: "$mostUrgentMinutes" },
+            mostUrgentAvgNumber: { $avg: "$mostUrgentNumber" },
+            urgentAvgMinutes: { $avg: "$urgentMinutes" },
+            urgentAvgNumber: { $avg: "$urgentNumber" },
+            leastUrgentAvgMinutes: { $avg: "$leastUrgentMinutes" },
+            leastUrgentAvgNumber: { $avg: "$leastUrgentNumber" },
+            numberBeingSeen : { $avg: "$totalBeingSeen" }
         }
     }]);
 
