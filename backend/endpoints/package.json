@@ -1,0 +1,16 @@
+{
+  "name": "endpoints",
+  "version": "1.0.0",
+  "description": "gives info on the hospital data we are collecting",
+  "main": "index.js",
+  "scripts": {
+    "start": "node endpoints.js",
+    "debug": "node --inspect=9222 endpoints.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2",
+    "mongodb": "^2.2.24"
+  }
+}
