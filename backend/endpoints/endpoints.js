@@ -26,7 +26,7 @@ MongoClient.connect(url, function(err, db) {
 app.get('/historical', function (req, res) {
     var result = dbCtx.aggregate([{
         $group: {
-            _id: { hospital: "$hospital", hourOfDay: { $hour: new Date( "$date" )} },
+            _id: { hospital: "$hospital", hourOfDay: { $substr:[ "$date", 11, 2] }},
             avgMinutes: { $avg: "$mostUrgentMinutes" },
             avgNumber: { $avg: "$mostUrgentNumber" }
         }
