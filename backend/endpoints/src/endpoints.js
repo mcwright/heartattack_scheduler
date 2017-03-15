@@ -37,5 +37,6 @@ app.get('/historical', (req, res) => {
  * Returns latest data for all hospitals
  */
 app.get( '/now', (req, res) => {
-    res.send( 'no implementation');
+    repository.getRecentInformation()
+        .then( data => res.json( data ), err => res.send( err ));
 });

@@ -7,7 +7,7 @@ class Repository {
         _connection = connection;
     }
 
-    getAllData( connection ){
+    getAllData( ){
         return new Promise( (resolve, reject) => {
             _connection.find({}).toArray( (err, docs) => {
                 if( err ) reject( err );
@@ -16,7 +16,7 @@ class Repository {
         });
     }
 
-    getHistoricalData( connection ){
+    getHistoricalData( ){
         return new Promise( ( resolve, reject ) => {
             _connection.aggregate([{
                 $group: {
@@ -34,6 +34,23 @@ class Repository {
                 resolve( docs );
             });
         });
+    }
+
+    getRecentInformation(){
+        return new Promise((resolve,reject) => {
+            _connection.find()
+                    .sort( { date : -1 })
+                    .limit( 1 )
+                    .toArray( (err, docs) => {
+                        if( err ) reject( err );
+                        
+                        var mostRecentTimestamp = docs[0].date;
+                        _connection.find( { date : mostRecentTimestamp}).toArray((err, docs) => {
+                            if( err ) reject( err);
+                            resolve( docs );
+                        });
+                    });
+        })
     }
 }
 
