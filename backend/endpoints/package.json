@@ -4,8 +4,8 @@
   "description": "gives info on the hospital data we are collecting",
   "main": "index.js",
   "scripts": {
-    "start": "node endpoints.js",
-    "debug": "node --inspect=9222 endpoints.js"
+    "start": "node src/endpoints.js",
+    "debug": "node --inspect=9222 src/endpoints.js"
   },
   "author": "",
   "license": "ISC",
